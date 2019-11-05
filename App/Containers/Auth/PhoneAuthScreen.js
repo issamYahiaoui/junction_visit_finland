@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View ,Text} from 'react-native';
 
-class PhoneAuth extends Component {
+class PhoneAuthScreen extends Component {
     render() {
         return (
             <View>
@@ -11,4 +11,4 @@ class PhoneAuth extends Component {
     }
 }
 
-export default PhoneAuth;
+export default PhoneAuthScreen;

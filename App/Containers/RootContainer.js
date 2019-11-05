@@ -29,10 +29,10 @@ class RootContainer extends Component {
         if (!this.state.async)
             return (<ActivityIndicator color='#fff' size='small' />)
         return (
-            <View style={styles.container}>
-                <StatusBar  backgroundColor={Colors.grey} barStyle='light-content' />
-                <AppNavigation />
-            </View>
+                <View style={styles.container}>
+                    <StatusBar  backgroundColor={Colors.grey} barStyle='light-content' />
+                    <AppNavigation />
+                </View>
         )
     }
 }

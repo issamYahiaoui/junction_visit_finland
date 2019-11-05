@@ -6,7 +6,8 @@ import { createStackNavigator  } from 'react-navigation-stack';
 import AuthLoadingScreen from '../Containers/Auth/AuthLoadingScreen';
 import LoginScreen from '../Containers/Auth/LoginScreen';
 import RegisterScreen from '../Containers/Auth/RegisterScreen';
-import PhoneAuth from '../Containers/Auth/PhoneAuth';
+import PhoneAuthScreen from '../Containers/Auth/PhoneAuthScreen';
+import LaunchSliderScreen from '../Containers/LaunchSliderScreen';
 
 const AppNavigation = createStackNavigator(
     {
@@ -28,7 +29,7 @@ const AuthStack = createStackNavigator(
     {
         Login: LoginScreen ,
         Register : RegisterScreen ,
-        PhoneAuth : PhoneAuth
+        PhoneAuth : PhoneAuthScreen
     },
     {
         initialRouteName: 'Login',
@@ -43,12 +44,13 @@ const AuthStack = createStackNavigator(
 export default createAppContainer(
     createSwitchNavigator(
         {
+            LaunchSlider: LaunchSliderScreen,
             AuthLoading: AuthLoadingScreen,
             App: AppNavigation,
             Auth: AuthStack,
         },
         {
-            initialRouteName: 'AuthLoading',
+            initialRouteName: 'LaunchSlider',
         }
     )
 );
