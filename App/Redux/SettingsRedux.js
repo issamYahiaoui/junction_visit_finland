@@ -13,7 +13,7 @@ export default Creators
 
 /* ------------- Initial State ------------- */
 export const INITIAL_STATE = Immutable({
-    lang: "en"// take over the recognized, or default if not recognized, language locale as initial state
+    lang: "ar"// take over the recognized, or default if not recognized, language locale as initial state
 })
 
 /* ------------- Reducers ------------- */

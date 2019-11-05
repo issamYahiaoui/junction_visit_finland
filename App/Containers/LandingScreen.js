@@ -1,24 +1,29 @@
 import React, { Component } from 'react'
-import {View, Text} from 'react-native'
+import {View, Text, Button} from 'react-native'
 
 
 import SettingsActions from '../Redux/SettingsRedux'
 
-//import { Button } from 'react-native-elements'
+
 import { connect } from 'react-redux'
 import styles from './Styles/LandingScreenStyles';
+import {getLocale, setLocale, t} from '../Services/I18n';
 // Styles
 
 
 class LandingScreen extends Component {
 
     state = {
+
     }
 
     render() {
+
+
         return (
             <View style={styles.container}>
-                <Text>Hello There , this is the landing page</Text>
+                <Text>{t('home' )}</Text>
+
             </View>
         )
     }
@@ -27,7 +32,6 @@ class LandingScreen extends Component {
 const mapStateToProps = ({settings}) => {
     return {
         lang:settings.lang
-
     }
 }
 
