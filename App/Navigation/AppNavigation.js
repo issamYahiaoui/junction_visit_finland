@@ -1,8 +1,9 @@
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer ,createSwitchNavigator } from 'react-navigation';
 
 import LandingScreen from '../Containers/LandingScreen';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator  } from 'react-navigation-stack';
+import SplashScreen from '../Containers/SplashScreen';
 
 const AppNavigation = createStackNavigator(
     {
@@ -19,4 +20,9 @@ const AppNavigation = createStackNavigator(
 
     }
 );
-export default createAppContainer(AppNavigation)
+
+const InitialNavigator = createSwitchNavigator({
+    Splash: SplashScreen,
+    App: AppNavigation
+});
+export default createAppContainer(InitialNavigator)
