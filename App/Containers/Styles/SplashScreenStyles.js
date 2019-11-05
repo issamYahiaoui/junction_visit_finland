@@ -4,17 +4,18 @@ import {StyleSheet} from 'react-native'
 export default StyleSheet.create({
 
 
-
     viewStyles: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'orange'
+        backgroundColor: 'black',
+        textAlign : 'center'
     },
     textStyles: {
-        color: 'white',
-        fontSize: 40,
+        color: 'yellow',
+        fontSize: 20,
         fontWeight: 'bold'
     }
+
 
 })
