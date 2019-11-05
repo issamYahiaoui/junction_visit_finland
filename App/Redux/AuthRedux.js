@@ -48,7 +48,7 @@ export const request = (state) => state.merge({ fetching: true,error:'' })
 export const success =  (state, action) => {
 
     const {user} = action
-    AsyncStorage.setItem('user',JSON.stringify(user)).then(()=>Navigator.navigate("App"))
+    AsyncStorage.setItem('user',JSON.stringify(user)).then(()=>Navigator.navigate("Home"))
     return   state.merge({ fetching: false, error: null, user })
 }
 
