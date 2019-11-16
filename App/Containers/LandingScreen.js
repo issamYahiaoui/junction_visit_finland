@@ -16,9 +16,6 @@ class LandingScreen extends Component {
 
     }
 
-    static navigationOptions = {
-        title: 'Welcome to the app!',
-    };
 
     render() {
         return (

@@ -11,9 +11,8 @@ class LoginScreen extends React.Component {
     };
 
     state = {
-        country_code: '213',
-        phone: '657058126',
-        password: '123456'
+        email: null,
+        password: null
     }
 
     handleChange = (name, value) => {
@@ -29,23 +28,28 @@ class LoginScreen extends React.Component {
                         Login
                     </Text>
                     <Text style={[globalStyle.p, {marginBottom: 10}]}>
-                        Enter your phone and password to login into Challenge Area
+                        Enter your phone and password to login into VisitFinland App
                     </Text>
-                    <PhoneInput
-                        ref={ref => {
-                            this.phone = ref;
-                        }}
-                        textStyle={globalStyle.input}
-                        onChangePhoneNumber={text => this.handleChange('phone', text)}
-                        onSelectCountry={e => this.handleChange('country_code', e)}
-                    />
-                    <TextInput
-                        style={globalStyle.input}
-                        onChangeText={text => this.handleChange('password', text)}
-                        value={this.state.password}
-                        placeholder="Password"
-                        placeholderTextColor={colors.gray}
-                    />
+                    <View style={{
+                        flexDirection:'column',
+                        justifyContent:'center',
+                        alignItems:'center'
+                    }}>
+                        <TextInput
+                            style={globalStyle.input}
+                            onChangeText={text => this.handleChange('email', text)}
+                            value={this.state.email}
+                            placeholder="E-mail"
+                            placeholderTextColor={colors.gray}
+                        />
+                        <TextInput
+                            style={globalStyle.input}
+                            onChangeText={text => this.handleChange('password', text)}
+                            value={this.state.password}
+                            placeholder="Password"
+                            placeholderTextColor={colors.gray}
+                        />
+                    </View>
                 </View>
                 <TouchableOpacity
                     style={globalStyle.button}
@@ -59,9 +63,6 @@ class LoginScreen extends React.Component {
     }
 
     _signInAsync = async () => {
-        const Api = api.create()
-        const response = await Api.login(this.state)
-        console.log(response)
         AsyncStorage.setItem('userToken', 'abc');
         this.props.navigation.navigate('App');
     };

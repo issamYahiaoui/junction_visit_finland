@@ -5,11 +5,13 @@ export default StyleSheet.create({
 
     input: {
         height: 50,
-        width: '100%',
+        width: '90%',
         padding: 10,
-        backgroundColor: colors.darkBlack,
+        borderRadius:20,
+        backgroundColor: colors.white,
         color: colors.white,
-        marginBottom: 1
+        marginBottom: 1,
+        borderColor: 'rgba(170, 187, 197, 0.5)'
     },
     button: {
         backgroundColor: colors.primary,
@@ -22,7 +24,7 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     buttonText: {
-        color: colors.darkBlack,
+        color: colors.white,
         fontSize: 18,
     },
     containerLightDark: {
@@ -33,12 +35,12 @@ export default StyleSheet.create({
 
     },
     h1: {
-        color: colors.white,
+        color: colors.gray,
         fontSize: 30,
         padding: 10
     },
     p: {
-        color: colors.white,
+        color: colors.gray,
         fontSize: 15,
         padding: 5
     }

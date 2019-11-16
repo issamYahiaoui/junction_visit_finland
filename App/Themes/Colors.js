@@ -32,11 +32,11 @@ const colors = {
     text: '#E0D7E5',
 
 
-    primary: '#FFD800',
+    primary: '#B20066',
     white: '#FFFFFF',
-    gray: 'gray',
+    gray: '#666666',
     darkBlack: '#000000',
-    lightBlack: '#151515',
+    lightBlack: '#EEF0F2',
 
 
 }
