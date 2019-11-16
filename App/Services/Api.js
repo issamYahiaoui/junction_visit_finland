@@ -2,7 +2,7 @@
 import apisauce from 'apisauce'
 
 // our "constructor"
-const create = (baseURL = 'http://elgarage.tutbekat.com/public/api/') => {
+const create = (baseURL = 'http://ch-area.herokuapp.com/api/v1/') => {
     // ------
     // STEP 1
     // ------

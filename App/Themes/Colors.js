@@ -1,9 +1,9 @@
 const colors = {
-    brown:"#A17C61",
-    red:'#4C1323',
-    wRed:'#774A57',
+    brown: "#A17C61",
+    red: '#4C1323',
+    wRed: '#774A57',
     silver: '#F7F7F7',
-    grey:'#CBC7BE',
+    grey: '#CBC7BE',
 
     //-------------------------------
 
@@ -29,7 +29,16 @@ const colors = {
     eggplant: '#251a34',
     border: '#483F53',
     banner: '#5F3E63',
-    text: '#E0D7E5'
+    text: '#E0D7E5',
+
+
+    primary: '#FFD800',
+    white: '#FFFFFF',
+    gray: 'gray',
+    darkBlack: '#000000',
+    lightBlack: '#151515',
+
+
 }
 
 export default colors
