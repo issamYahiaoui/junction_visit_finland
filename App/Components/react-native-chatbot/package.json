@@ -1,19 +1,19 @@
 {
-  "_from": "react-native-chatbot@0.0.1-alpha.12",
+  "_from": "react-native-chatbot",
   "_id": "react-native-chatbot@0.0.1-alpha.12",
   "_inBundle": false,
   "_integrity": "sha512-LN0Z0kVp6cJ1+0w5nqvuEexv3nGgthanP6hqEms5nHGZ8MTkUh6LhI3GGHhQZdOLz4lommCZDwuVqm8CLFMTrQ==",
   "_location": "/react-native-chatbot",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "tag",
     "registry": true,
-    "raw": "react-native-chatbot@0.0.1-alpha.12",
+    "raw": "react-native-chatbot",
     "name": "react-native-chatbot",
     "escapedName": "react-native-chatbot",
-    "rawSpec": "0.0.1-alpha.12",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "0.0.1-alpha.12"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
     "#USER",
@@ -21,7 +21,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/react-native-chatbot/-/react-native-chatbot-0.0.1-alpha.12.tgz",
   "_shasum": "e201f7a9485ffda48e5498dbfb25f6da121c4e13",
-  "_spec": "react-native-chatbot@0.0.1-alpha.12",
+  "_spec": "react-native-chatbot",
   "_where": "/Users/issam/dev/junction_visit_finland",
   "bugs": {
     "url": "https://github.com/LucasBassetti/react-native-chatbot/issues"

@@ -1,46 +1,31 @@
-import React, {Component} from 'react'
-import {View, Text, Button, Image, Layout, StyleSheet, TouchableOpacity} from 'react-native';
-import colors from '../../Themes/Colors'
-import Carousel from 'react-native-snap-carousel';
-import {Avatar, Badge, Icon, withBadge} from 'react-native-elements'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import colors from "../../../../../Themes/Colors";
+import {Badge, Icon} from "react-native-elements";
+import Carousel from "react-native-snap-carousel";
 
 
-export default class WhereCarousel extends Component {
-    state = {
-        entries: [
-            {
-                imgSource: 'https://edit.myhelsinki.fi/sites/default/files/styles/hero_image/public/2017-04/Esplanadinpuisto-kuva-laurirotko.jpg?h=5e08a8b6&itok=Ijrld8Fe',
-                parkName: 'Esplanade Park',
-                value : 1
-            },
-            {
-                imgSource: 'https://edit.myhelsinki.fi/sites/default/files/styles/hero_image/public/2017-04/Esplanadinpuisto-kuva-laurirotko.jpg?h=5e08a8b6&itok=Ijrld8Fe',
-                parkName: 'Esplanade Park',
-                value : 2
-            },
-            {
-                imgSource: 'https://edit.myhelsinki.fi/sites/default/files/styles/hero_image/public/2017-04/Esplanadinpuisto-kuva-laurirotko.jpg?h=5e08a8b6&itok=Ijrld8Fe',
-                parkName: 'Esplanade Park',
-                value : 3
-            },
-            {
-                imgSource: 'https://edit.myhelsinki.fi/sites/default/files/styles/hero_image/public/2017-04/Esplanadinpuisto-kuva-laurirotko.jpg?h=5e08a8b6&itok=Ijrld8Fe',
-                parkName: 'Esplanade Park',
-                value : 4
-            },
-            {
-                imgSource: 'https://edit.myhelsinki.fi/sites/default/files/styles/hero_image/public/2017-04/Esplanadinpuisto-kuva-laurirotko.jpg?h=5e08a8b6&itok=Ijrld8Fe',
-                parkName: 'Esplanade Park',
-                value : 5
-            }
-        ]
+
+class WhereCardStep extends Component {
+    /* istanbul ignore next */
+    constructor(props) {
+        super(props);
+
+        this.renderItem = this.renderItem.bind(this);
+        this.onOptionClick = this.onOptionClick.bind(this);
     }
 
-    _renderItem({item, index}) {
+    onOptionClick({ value }) {
+        this.props.triggerNextStep({ value });
+    }
+
+    _renderItem(item) {
+        const { value, parkName, imgSource } = item;
 
         return (
             <TouchableOpacity
-                onPress={this.triggerNextStep.bind(this , {value  : item.id})}
+                onPress={() => this.onOptionClick({ value })}
             >
             <View style={style.container}>
                 <View style={[style.grid, {width: "100%"}]}>
@@ -54,7 +39,7 @@ export default class WhereCarousel extends Component {
                                 width: '100%',
                                 height: '100%',
                             }}
-                            source={{ uri: item.imgSource}}
+                            source={{ uri: imgSource}}
                         />
                         <Text style={[style.details, {
                             position: 'absolute',
@@ -64,7 +49,7 @@ export default class WhereCarousel extends Component {
                             borderBottomRightRadius: 10,
                             borderTopRightRadius: 10,
                             backgroundColor: colors.lightBlack
-                        }]}>{item.parkName}</Text>
+                        }]}>{parkName}</Text>
                     </View>
 
                     <View style={style.detailsContainer}>
@@ -97,29 +82,24 @@ export default class WhereCarousel extends Component {
                 </View>
             </View>
             </TouchableOpacity>
-        );
-    }
-
-    triggerNextStep = ()=>{
-        console.warn('trigger ...')
-        this.props.trigger()
+        )
     }
 
     render() {
-        let data  = this.state.entries
+        const { cardData } = this.props.step;
+
         return (
             <Carousel
                 ref={(c) => {
                     this._carousel = c;
                 }}
                 data={data}
-                renderItem={(item) => this._renderItem(item)}
+                renderItem={this._renderItem}
                 sliderWidth={400}
                 itemWidth={300}
             />
         );
     }
-
 }
 const style = StyleSheet.create({
     container: {
@@ -162,3 +142,10 @@ const style = StyleSheet.create({
 
 
 
+
+WhereCardStep.propTypes = {
+    step: PropTypes.object.isRequired,
+    triggerNextStep: PropTypes.func.isRequired,
+};
+
+export default WhereCardStep;
