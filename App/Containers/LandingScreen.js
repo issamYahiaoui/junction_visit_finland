@@ -10,6 +10,7 @@ import styles from './Styles/LandingScreenStyles';
 import {getLocale, setLocale, t} from '../Services/I18n';
 import ChatBot from "../Components/react-native-chatbot/lib";
 import WhatCard from "../Components/partials/WhatCard";
+import DateCard from "../Components/partials/DateCard";
 
 // Styles
 
@@ -20,18 +21,16 @@ export default class LandingScreen extends Component {
 
     state = {
 
-    where : true ,  what : false , when : false ,
+    where : false ,  what : false , when : true ,
 
     }
     _trigger_what =  ()=> {
 
          this.setState({what : true , where : false , when : false})
 
-
     }
-    _trigger_when =  ()=> {
-        this.setState({when : true , what : false , where : false})
-
+    _trigger_where =  ()=> {
+        this.setState({when : false , what : false , where : true})
     }
 
 
@@ -45,7 +44,7 @@ export default class LandingScreen extends Component {
         },
         {
             id: '2',
-            component:(<WhereCard trigger={this._trigger_when}  />),
+            component:(<DateCard trigger={this._trigger_where}  />),
             end : true
         },
 
@@ -90,13 +89,13 @@ export default class LandingScreen extends Component {
         return (
             <View style={{ backgroundColor : 'white', borderRadius : 10, padding : 10, height : '100%' ,flex : 1 , flexDirection : 'column', overflow : 'scroll'  }}>
                 {
-                    where &&
+                    when &&
                     <View style={{height : '70%'}}>
                         <ChatBot steps={this.steps_1} />
                     </View>
                 }
                 {
-                    when &&
+                    where &&
                     <View style={{height : '70%'}}>
                     <ChatBot steps={this.steps_2} />
                 </View>

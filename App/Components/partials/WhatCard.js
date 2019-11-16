@@ -65,9 +65,7 @@ export default class WhatCarousel extends Component {
         );
 
         return (
-            <TouchableOpacity
 
-            >
             <View style={style.container}>
                 <View style={style.type}>
                     <Text>{item.type}</Text>
@@ -76,7 +74,7 @@ export default class WhatCarousel extends Component {
                     {options}
                 </View>
             </View>
-            </TouchableOpacity>
+
         );
     }
 
