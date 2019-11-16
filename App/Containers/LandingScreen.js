@@ -9,6 +9,7 @@ import {connect} from 'react-redux'
 import styles from './Styles/LandingScreenStyles';
 import {getLocale, setLocale, t} from '../Services/I18n';
 import ChatBot from "../Components/react-native-chatbot/lib";
+import WhatCard from "../Components/partials/WhatCard";
 
 // Styles
 
@@ -23,38 +24,37 @@ export default class LandingScreen extends Component {
 
     }
     _trigger_what =  ()=> {
-        console.warn('trigger what')
+
          this.setState({what : true , where : false , when : false})
-        console.warn('what' , this.state.what)
+
 
     }
     _trigger_when =  ()=> {
-        console.warn('trigger when')
         this.setState({when : true , what : false , where : false})
-        console.warn('what' , this.state.what)
 
     }
+
+
 
 
     steps_1 = [
         {
             id: '1',
-            message: 'Great , so tell us which park  you are going to visit ?',
+            message: "Hey Issam ! When are you planing to visit our amazing parks ?",
             trigger: '2',
         },
         {
             id: '2',
-            component:(<WhereCard  trigger={this._trigger_when} />),
-           end : true
+            component:(<WhereCard trigger={this._trigger_when}  />),
+            end : true
         },
 
 
     ]
-
     steps_2 = [
         {
             id: '1',
-            message: "Hey Issam ! When are you planing to visit our amazing parks ?",
+            message: 'Great , so tell us which park  you are going to visit ?',
             trigger: '2',
         },
         {
@@ -73,7 +73,8 @@ export default class LandingScreen extends Component {
         },
         {
             id: '2',
-            component:(<WhereCard trigger={this._trigger_when}  />),
+            component:(<WhatCard  trigger={this._trigger_what} />),
+
             end : true
         },
 
@@ -91,13 +92,13 @@ export default class LandingScreen extends Component {
                 {
                     where &&
                     <View style={{height : '70%'}}>
-                        <ChatBot steps={this.steps_2} />
+                        <ChatBot steps={this.steps_1} />
                     </View>
                 }
                 {
                     when &&
                     <View style={{height : '70%'}}>
-                    <ChatBot steps={this.steps_1} />
+                    <ChatBot steps={this.steps_2} />
                 </View>
                 }
                 {

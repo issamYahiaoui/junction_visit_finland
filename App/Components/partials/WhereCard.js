@@ -11,27 +11,42 @@ export default class WhereCarousel extends Component {
             {
                 imgSource: 'https://edit.myhelsinki.fi/sites/default/files/styles/hero_image/public/2017-04/Esplanadinpuisto-kuva-laurirotko.jpg?h=5e08a8b6&itok=Ijrld8Fe',
                 parkName: 'Esplanade Park',
-                value : 1
+                visit: 3000,
+                distance: 9,
+                weather: "cloud",
+                degree: 5
             },
             {
                 imgSource: 'https://edit.myhelsinki.fi/sites/default/files/styles/hero_image/public/2017-04/Esplanadinpuisto-kuva-laurirotko.jpg?h=5e08a8b6&itok=Ijrld8Fe',
                 parkName: 'Esplanade Park',
-                value : 2
+                visit: 15000,
+                distance: 0.1,
+                weather: "cloud",
+                degree: 7
             },
             {
                 imgSource: 'https://edit.myhelsinki.fi/sites/default/files/styles/hero_image/public/2017-04/Esplanadinpuisto-kuva-laurirotko.jpg?h=5e08a8b6&itok=Ijrld8Fe',
                 parkName: 'Esplanade Park',
-                value : 3
+                visit: 7000,
+                distance: 12,
+                weather: "rain",
+                degree: 0
             },
             {
                 imgSource: 'https://edit.myhelsinki.fi/sites/default/files/styles/hero_image/public/2017-04/Esplanadinpuisto-kuva-laurirotko.jpg?h=5e08a8b6&itok=Ijrld8Fe',
                 parkName: 'Esplanade Park',
-                value : 4
+                visit: 1000,
+                distance: 100,
+                weather: "cloud",
+                degree: 10
             },
             {
                 imgSource: 'https://edit.myhelsinki.fi/sites/default/files/styles/hero_image/public/2017-04/Esplanadinpuisto-kuva-laurirotko.jpg?h=5e08a8b6&itok=Ijrld8Fe',
                 parkName: 'Esplanade Park',
-                value : 5
+                visit: 3000,
+                distance: 30,
+                weather: "sun",
+                degree: -1
             }
         ]
     }
@@ -75,17 +90,59 @@ export default class WhereCarousel extends Component {
                         }]}>
                             <View style={style.label}>
                                 <View style={{flexDirection: "row"}}>
-                                    <Icon name='person' color="green" type="material"/>
-                                    <Icon name='person' color="gray" type="material"/>
-                                    <Icon name='person' color="gray" type="material"/>
-                                    <Icon name='person' color="gray" type="material"/>
-                                    <Icon name='person' color="gray" type="material"/>
+                                    {item.visit > 0 && item.visit < 3000 &&
+                                    <View style={style.icons}>
+                                        <Icon name='person' color={"green"} type="material"/>
+                                        <Icon name='person' color={"gray"} type="material"/>
+                                        <Icon name='person' color={"gray"} type="material"/>
+                                        <Icon name='person' color={"gray"} type="material"/>
+                                        <Icon name='person' color={"gray"} type="material"/>
+                                    </View>
+                                    }
+                                    {item.visit >= 3000 && item.visit < 6000 &&
+                                    <View style={style.icons}>
+                                        <Icon name='person' color={"green"} type="material"/>
+                                        <Icon name='person' color={"green"} type="material"/>
+                                        <Icon name='person' color={"gray"} type="material"/>
+                                        <Icon name='person' color={"gray"} type="material"/>
+                                        <Icon name='person' color={"gray"} type="material"/>
+                                    </View>
+                                    }
+                                    {item.visit >= 6000 && item.visit < 9000 &&
+                                    <View style={style.icons}>
+                                        <Icon name='person' color={"orange"} type="material"/>
+                                        <Icon name='person' color={"orange"} type="material"/>
+                                        <Icon name='person' color={"orange"} type="material"/>
+                                        <Icon name='person' color={"gray"} type="material"/>
+                                        <Icon name='person' color={"gray"} type="material"/>
+                                    </View>
+                                    }
+                                    {item.visit >= 9000 && item.visit < 12000 &&
+                                    <View style={style.icons}>
+                                        <Icon name='person' color={"orange"} type="material"/>
+                                        <Icon name='person' color={"orange"} type="material"/>
+                                        <Icon name='person' color={"orange"} type="material"/>
+                                        <Icon name='person' color={"orange"} type="material"/>
+                                        <Icon name='person' color={"gray"} type="material"/>
+                                    </View>
+                                    }
+                                    {item.visit >= 12000 &&
+                                    <View style={style.icons}>
+                                        <Icon name='person' color={"red"} type="material"/>
+                                        <Icon name='person' color={"red"} type="material"/>
+                                        <Icon name='person' color={"red"} type="material"/>
+                                        <Icon name='person' color={"red"} type="material"/>
+                                        <Icon name='person' color={"red"} type="material"/>
+                                    </View>
+                                    }
+
+
                                 </View>
-                                <Badge value="9900" status="success"/>
+                                <Badge value={item.visit} status="success"/>
                             </View>
                             <View style={style.label}>
-                                <Icon name="location" type="entypo"/>
-                                <Text>200 Km</Text>
+                                <Icon name="location-pin" type="entypo"/>
+                                <Text>{item.distance} Km</Text>
                             </View>
                             <View style={style.label}>
                                 <Icon name='cloud' type="foundation"/>
@@ -101,7 +158,7 @@ export default class WhereCarousel extends Component {
     }
 
     triggerNextStep = ()=>{
-        console.warn('trigger ...')
+
         this.props.trigger()
     }
 
@@ -157,7 +214,9 @@ const style = StyleSheet.create({
     label: {
         flexDirection: 'column',
     },
-    image: {}
+    icons: {
+        flexDirection: 'row'
+    }
 })
 
 
