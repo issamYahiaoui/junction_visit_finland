@@ -24,12 +24,17 @@ class LoginScreen extends React.Component {
         return (
             <View style={globalStyle.containerLightDark}>
                 <View>
-                    <Text style={globalStyle.h1}>
+                    <Text style={{fontSize : 38 , textAlign: 'center'}}>
                         Login
                     </Text>
-                    <Text style={[globalStyle.p, {marginBottom: 10}]}>
+
+                    <View style={{marginBottom: 10 , padding : 10  , textAlign : 'center'}}>
+                        <Text style={globalStyle.p}>
                         Enter your phone and password to login into VisitFinland App
                     </Text>
+
+                    </View>
+
                     <View style={{
                         flexDirection:'column',
                         justifyContent:'center',

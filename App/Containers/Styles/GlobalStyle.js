@@ -10,7 +10,7 @@ export default StyleSheet.create({
         borderRadius:20,
         backgroundColor: colors.white,
         color: colors.white,
-        marginBottom: 1,
+        marginBottom: 10,
         borderColor: 'rgba(170, 187, 197, 0.5)'
     },
     button: {

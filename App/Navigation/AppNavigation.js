@@ -44,13 +44,13 @@ const AuthStack = createStackNavigator(
 export default createAppContainer(
     createSwitchNavigator(
         {
-            LaunchSlider: LaunchSliderScreen,
+            // LaunchSlider: LaunchSliderScreen,
             AuthLoading: AuthLoadingScreen,
             App: AppNavigation,
             Auth: AuthStack,
         },
         {
-            initialRouteName: 'LaunchSlider',
+            initialRouteName: 'AuthLoading',
         }
     )
 );
