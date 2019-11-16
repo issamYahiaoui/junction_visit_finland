@@ -5,6 +5,8 @@ import Option from './Option';
 import OptionElement from './OptionElement';
 import OptionText from './OptionText';
 import Options from './Options';
+import WhereStep from "../../../../partials/WhereStep";
+import {Text, View} from "react-native";
 
 class OptionsStep extends Component {
   /* istanbul ignore next */
@@ -22,7 +24,7 @@ class OptionsStep extends Component {
   renderOption(option) {
     const { optionStyle, optionElementStyle } = this.props;
     const { optionBubbleColor, optionFontColor, bubbleColor, fontColor } = this.props.step;
-    const { value, label } = option;
+    const { value, label  } = option;
     return (
       <Option
         key={value}
@@ -30,18 +32,26 @@ class OptionsStep extends Component {
         style={optionStyle}
         onPress={() => this.onOptionClick({ value })}
       >
-        <OptionElement
-          className="rsc-os-option-element"
-          style={optionElementStyle}
-          bubbleColor={optionBubbleColor || bubbleColor}
-        >
-          <OptionText
-            class="rsc-os-option-text"
-            fontColor={optionFontColor || fontColor}
-          >
-            {label}
-          </OptionText>
-        </OptionElement>
+
+
+        {/*<OptionElement*/}
+        {/*  className="rsc-os-option-element"*/}
+        {/*  style={optionElementStyle}*/}
+        {/*  bubbleColor={optionBubbleColor || bubbleColor}*/}
+        {/*>*/}
+        {/*  /!*{*!/*/}
+        {/*  /!*  label &&*!/*/}
+        {/*  /!*  <OptionText*!/*/}
+        {/*  /!*      class="rsc-os-option-text"*!/*/}
+        {/*  /!*      fontColor={optionFontColor || fontColor}*!/*/}
+        {/*  /!*  >*!/*/}
+        {/*  /!*    {label}*!/*/}
+        {/*  /!*  </OptionText>*!/*/}
+        {/*  /!*}*!/*/}
+        {/*  {*/}
+        {/*   component*/}
+        {/*  }*/}
+        {/*</OptionElement>*/}
       </Option>
     );
   }
@@ -51,7 +61,20 @@ class OptionsStep extends Component {
 
     return (
       <Options className="rsc-os">
-        {_.map(options, this.renderOption)}
+        <WhereStep
+            _renderItem ={({item, index}) =>{
+
+              console.warn(item)
+              return (
+              <View >
+              <Text >{ item.title }</Text>
+              </View>
+              );
+            }}
+            data
+        >
+          {_.map(options, this.renderOption)}
+        </WhereStep>
       </Options>
     );
   }

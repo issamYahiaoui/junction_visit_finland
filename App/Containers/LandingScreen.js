@@ -8,23 +8,10 @@ import {View, Text, Button,  AsyncStorage} from 'react-native';
 import styles from './Styles/LandingScreenStyles';
 import colors from '../Themes/Colors'
 import ChatBot from "../Components/react-native-chatbot/lib";
+import WhereStep from "../Components/partials/WhereStep";
 
 
 // Styles
-const parks = [
-    {
-        id : 1 ,
-        title : 'Park 1'
-    },
-    {
-        id : 2 ,
-        title : 'Park 2'
-    },
-    {
-        id : 3 ,
-        title : 'Park 3'
-    }
-]
 
 
 const steps = [
@@ -42,7 +29,7 @@ const steps = [
     {
         id: '4',
         options: [
-            { value: 1, component: (<View><Text>Hello</Text><Text> :: There</Text></View>), trigger: '5' },
+            { value: 1, component: (<WhereStep />), trigger: '5' },
             { value: 2, label: 'Some other date', trigger: '5' },
             { value: 3, label: 'Some other date ...', trigger: '5' },
         ],
@@ -89,8 +76,10 @@ class LandingScreen extends Component {
 
 
             <ChatBot
-                style={{backgroundColor : colors.primary , color : colors.primary}}
-                steps={steps} />
+                optionElementStyle ={styles.optionElementStyle}
+
+                steps={steps}
+            />
 
 
         );
