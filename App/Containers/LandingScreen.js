@@ -3,7 +3,7 @@ import {View, Text, Button, AsyncStorage} from 'react-native';
 
 
 import SettingsActions from '../Redux/SettingsRedux'
-import {WhereCard, WhatCard, DateCard} from '../Components/partials/'
+import {WhereCard, WhatCard, DateCard,EntranceCard} from '../Components/partials/'
 
 import {connect} from 'react-redux'
 import styles from './Styles/LandingScreenStyles';
@@ -19,9 +19,11 @@ export default class LandingScreen extends Component {
     render() {
         return (
             <View>
+                <EntranceCard/>
                 <WhereCard/>
                 <WhatCard/>
                 <DateCard/>
+
             </View>
         );
     }
