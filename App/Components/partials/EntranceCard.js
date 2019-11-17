@@ -10,33 +10,27 @@ export default class EntranceCard extends Component {
         entries: {
             'park1': [
                 {
-                    name: 'Finnish Nature Centre Hatia',
+                    name: 'Haukkalampi',
                     distance: 60,
                 }, {
-                    name: 'Finnish Nature Centre Hatia',
+                    name: 'Högbacka',
                     distance: 100,
                 }, {
-                    name: 'Finnish Nature Centre Hatia',
+                    name: 'Siikaniemi',
                     distance: 200,
-                }, {
-                    name: 'Finnish Nature Centre Hatia',
-                    distance: 30,
-                },
+                }
             ],
             'park2': [
                 {
-                    name: 'Finnish Nature Centre Hatia',
+                    name: 'Ounastunturi Fells',
                     distance: 200,
                 }, {
-                    name: 'Finnish Nature Centre Hatia',
+                    name: 'Pallastunturi Fells',
                     distance: 200,
                 }, {
-                    name: 'Finnish Nature Centre Hatia',
+                    name: 'Yllästunturi Fell',
                     distance: 200,
-                }, {
-                    name: 'Finnish Nature Centre Hatia',
-                    distance: 200,
-                },
+                }
             ]
         }
     }

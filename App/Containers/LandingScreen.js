@@ -101,22 +101,22 @@ export default class LandingScreen extends Component {
   steps_5 = [
       {
           id: '1',
-          message: 'Message 1',
+          message: 'Thank you for telling us about your trip, here is what we propose for you in Nuuksio National Park for your journey on Friday 22 November 2019 for 10 hours:',
           trigger: '2',
       },
       {
           id: '2',
-          message: 'Message 2',
+          message: 'f you’re coming by car, go and park your car in the parking area at  Haukkalampi (Haukkalammentie 32, Espoo, main information point, eastern part)',
           trigger: '3',
       },
       {
           id: '3',
-          message: 'Message 3',
+          message: 'Before your journey, dont forget that in the National Park walking, skiing, rowing and canoeing, except in the possibly restricted areas are allowed but Campfire and camping are only allowed at sites marked for this purpose.',
           trigger: '4',
       },
       {
           id: '4',
-          message: 'Message 4',
+          message: 'We Wish You a nice trip',
           trigger : '5'
       },
       {
@@ -127,44 +127,35 @@ export default class LandingScreen extends Component {
       },
       {
           id: '6',
-          message: 'Message 6',
+          message: 'You are going hiking to Korpinkierros, it’s a 08 km Circle Trail.',
           trigger: '7',
       },
       {
           id: '7',
-          message: 'Message 7',
+          message: 'The estimated time is 04 h, and it’s a challenging trail.',
           trigger: '8',
       },
       {
           id: '8',
-          message: 'Message 8',
+          message: 'Your starting point will be Haukkalampi, Address: Haukkalammentie 32, 02820 Espoo and Siikaniemi, Siikajärvenranta, Espoo.',
           trigger: '9',
       },
       {
           id: '9',
-          message: 'Message 9',
+          message: 'uring your adventure don’t forget to Several species of bird’s nest in the park\'s woods, meadows and rocky terrain. There is also a birdwatching tower by Lake Matalajärvi.',
           trigger : '10'
       },
       {
           id: '10',
-          message: 'Message 10',
+          message: 'There are no restrictions on berry and mushroom picking in the park. Treat yourself to Nuuksio\'s tasty bilberries.',
           trigger: '11',
       },
       {
           id: '11',
-          message: 'Message 11',
-          trigger: '12',
+          message: 'The park offers beautiful scenery and a varied landscape: There are lakes, woodland, valleys, rocky hills and wetland. Korpinkierros Trail is especially scenic.',
+          end : true
       },
-      {
-          id: '12',
-          message: 'Message 12',
-          trigger : '13'
-      },
-      {
-          id: '13',
-          message: 'Message 13',
-          end: true
-      },
+
   ]
 
 

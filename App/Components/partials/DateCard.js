@@ -52,7 +52,7 @@ export default class DateCarousel extends Component {
                     <DatePicker
                         style={style.datePicker}
                         date={this.state.start_date}
-                        mode="date"
+                        mode="datetime"
                         placeholder="select date"
                         format="YYYY-MM-DD"
                         confirmBtnText="Confirm"
@@ -79,7 +79,7 @@ export default class DateCarousel extends Component {
                     <DatePicker
                         style={style.datePicker}
                         date={this.state.end_date}
-                        mode="date"
+                        mode="datetime"
                         placeholder="select date"
                         format="YYYY-MM-DD"
                         confirmBtnText="Confirm"
