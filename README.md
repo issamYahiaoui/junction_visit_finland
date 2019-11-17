@@ -7,6 +7,5 @@ Technologies used to develop BackYard
 
 ## For the data manipulation and timeseries forecasting
 ### Facebook Prophet for timeseries forecasting
-* [Learn More About Facebook Prophet](https://facebook.github.io/prophet/docs/quick_start.html) money but has a free html book.
-* [Visit numbers forecasting model using Facebook Prophet](https://colab.research.google.com/drive/1ppp7FYy46-UzvcxyN6pv2gxM9PK14Vv0#scrollTo=nAI77jbiKh_O)
-A website with tutorial materials you download and follow along with.
+* [Learn More About Facebook Prophet](https://facebook.github.io/prophet/docs/quick_start.html) to check more about the library we used.
+* [Visit numbers forecasting model using Facebook Prophet](https://colab.research.google.com/drive/1ppp7FYy46-UzvcxyN6pv2gxM9PK14Vv0#scrollTo=nAI77jbiKh_O), our model used to forecast visit numbers in the future
